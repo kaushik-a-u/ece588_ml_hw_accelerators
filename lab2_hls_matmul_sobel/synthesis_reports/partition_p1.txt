@@ -1,0 +1,1758 @@
+
+
+================================================================
+== Vitis HLS Report for 'matmul'
+================================================================
+* Date:           Thu Oct  1 11:24:02 2026
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        vitis.prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
+    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  3290040|  3290040|  32.900 ms|  32.900 ms|  3290041|  3290041|       no|
+    +---------+---------+-----------+-----------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------------+---------------------------------------------------+---------+---------+----------+----------+-------+-------+---------+
+        |                                                               |                                                   |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+        |                            Instance                           |                       Module                      |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+        +---------------------------------------------------------------+---------------------------------------------------+---------+---------+----------+----------+-------+-------+---------+
+        |grp_matmul_Pipeline_VITIS_LOOP_22_1_VITIS_LOOP_24_2_fu_4974    |matmul_Pipeline_VITIS_LOOP_22_1_VITIS_LOOP_24_2    |    15003|    15003|  0.150 ms|  0.150 ms|  15003|  15003|       no|
+        |grp_matmul_Pipeline_VITIS_LOOP_40_5_VITIS_LOOP_42_6_fu_5131    |matmul_Pipeline_VITIS_LOOP_40_5_VITIS_LOOP_42_6    |    20004|    20004|  0.200 ms|  0.200 ms|  20004|  20004|       no|
+        |grp_matmul_Pipeline_VITIS_LOOP_31_3_VITIS_LOOP_33_4_fu_5136    |matmul_Pipeline_VITIS_LOOP_31_3_VITIS_LOOP_33_4    |    30003|    30003|  0.300 ms|  0.300 ms|  30003|  30003|       no|
+        |grp_matmul_Pipeline_VITIS_LOOP_52_9_fu_5293                    |matmul_Pipeline_VITIS_LOOP_52_9                    |      154|      154|  1.540 us|  1.540 us|    154|    154|       no|
+        |grp_matmul_Pipeline_VITIS_LOOP_60_10_VITIS_LOOP_62_11_fu_5600  |matmul_Pipeline_VITIS_LOOP_60_10_VITIS_LOOP_62_11  |    20006|    20006|  0.200 ms|  0.200 ms|  20006|  20006|       no|
+        +---------------------------------------------------------------+---------------------------------------------------+---------+---------+----------+----------+-------+-------+---------+
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- VITIS_LOOP_48_7_VITIS_LOOP_50_8  |  3220000|  3220000|       161|          -|          -|  20000|        no|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    1|       -|      -|    -|
+|Expression       |        -|    -|       0|     89|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    3|    1410|   4238|    -|
+|Memory           |      332|    -|       0|      0|    0|
+|Multiplexer      |        -|    -|       -|  11536|    -|
+|Register         |        -|    -|    5168|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |      332|    4|    6578|  15863|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |      118|    1|       6|     29|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+    |                            Instance                           |                       Module                      | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +---------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+    |control_s_axi_U                                                |control_s_axi                                      |        0|   0|  246|   424|    0|
+    |grp_matmul_Pipeline_VITIS_LOOP_22_1_VITIS_LOOP_24_2_fu_4974    |matmul_Pipeline_VITIS_LOOP_22_1_VITIS_LOOP_24_2    |        0|   0|   50|   151|    0|
+    |grp_matmul_Pipeline_VITIS_LOOP_31_3_VITIS_LOOP_33_4_fu_5136    |matmul_Pipeline_VITIS_LOOP_31_3_VITIS_LOOP_33_4    |        0|   0|   52|   156|    0|
+    |grp_matmul_Pipeline_VITIS_LOOP_40_5_VITIS_LOOP_42_6_fu_5131    |matmul_Pipeline_VITIS_LOOP_40_5_VITIS_LOOP_42_6    |        0|   1|   53|   161|    0|
+    |grp_matmul_Pipeline_VITIS_LOOP_52_9_fu_5293                    |matmul_Pipeline_VITIS_LOOP_52_9                    |        0|   1|  128|  1727|    0|
+    |grp_matmul_Pipeline_VITIS_LOOP_60_10_VITIS_LOOP_62_11_fu_5600  |matmul_Pipeline_VITIS_LOOP_60_10_VITIS_LOOP_62_11  |        0|   1|  138|   204|    0|
+    |mem_m_axi_U                                                    |mem_m_axi                                          |        0|   0|  743|  1415|    0|
+    +---------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+    |Total                                                          |                                                   |        0|   3| 1410|  4238|    0|
+    +---------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    +------------------------------------+-------------------------------+--------------+
+    |              Instance              |             Module            |  Expression  |
+    +------------------------------------+-------------------------------+--------------+
+    |mac_muladd_7ns_8ns_8ns_15_4_1_U620  |mac_muladd_7ns_8ns_8ns_15_4_1  |  i0 * i1 + i2|
+    +------------------------------------+-------------------------------+--------------+
+
+    * Memory: 
+    +-----------------------+-------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |         Memory        |             Module            | BRAM_18K| FF| LUT| URAM| Words | Bits| Banks| W*Bits*Banks|
+    +-----------------------+-------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |Matrix_A_BRAM_V_U      |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_1_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_2_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_3_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_4_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_5_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_6_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_7_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_8_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_9_U    |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_10_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_11_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_12_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_13_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_14_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_15_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_16_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_17_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_18_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_19_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_20_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_21_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_22_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_23_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_24_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_25_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_26_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_27_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_28_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_29_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_30_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_31_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_32_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_33_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_34_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_35_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_36_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_37_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_38_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_39_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_40_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_41_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_42_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_43_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_44_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_45_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_46_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_47_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_48_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_49_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_50_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_51_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_52_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_53_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_54_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_55_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_56_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_57_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_58_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_59_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_60_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_61_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_62_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_63_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_64_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_65_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_66_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_67_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_68_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_69_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_70_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_71_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_72_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_73_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_74_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_75_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_76_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_77_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_78_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_79_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_80_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_81_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_82_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_83_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_84_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_85_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_86_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_87_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_88_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_89_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_90_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_91_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_92_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_93_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_94_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_95_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_96_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_97_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_98_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_99_U   |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_100_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_101_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_102_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_103_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_104_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_105_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_106_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_107_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_108_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_109_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_110_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_111_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_112_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_113_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_114_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_115_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_116_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_117_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_118_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_119_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_120_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_121_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_122_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_123_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_124_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_125_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_126_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_127_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_128_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_129_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_130_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_131_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_132_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_133_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_134_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_135_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_136_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_137_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_138_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_139_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_140_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_141_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_142_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_143_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_144_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_145_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_146_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_147_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_148_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_A_BRAM_V_149_U  |Matrix_A_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    100|   16|     1|         1600|
+    |Matrix_B_BRAM_V_U      |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_1_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_2_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_3_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_4_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_5_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_6_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_7_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_8_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_9_U    |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_10_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_11_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_12_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_13_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_14_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_15_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_16_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_17_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_18_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_19_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_20_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_21_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_22_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_23_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_24_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_25_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_26_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_27_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_28_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_29_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_30_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_31_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_32_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_33_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_34_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_35_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_36_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_37_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_38_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_39_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_40_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_41_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_42_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_43_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_44_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_45_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_46_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_47_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_48_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_49_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_50_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_51_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_52_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_53_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_54_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_55_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_56_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_57_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_58_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_59_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_60_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_61_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_62_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_63_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_64_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_65_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_66_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_67_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_68_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_69_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_70_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_71_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_72_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_73_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_74_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_75_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_76_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_77_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_78_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_79_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_80_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_81_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_82_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_83_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_84_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_85_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_86_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_87_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_88_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_89_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_90_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_91_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_92_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_93_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_94_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_95_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_96_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_97_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_98_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_99_U   |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_100_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_101_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_102_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_103_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_104_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_105_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_106_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_107_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_108_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_109_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_110_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_111_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_112_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_113_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_114_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_115_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_116_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_117_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_118_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_119_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_120_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_121_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_122_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_123_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_124_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_125_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_126_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_127_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_128_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_129_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_130_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_131_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_132_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_133_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_134_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_135_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_136_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_137_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_138_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_139_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_140_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_141_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_142_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_143_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_144_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_145_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_146_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_147_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_148_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_B_BRAM_V_149_U  |Matrix_B_BRAM_V_RAM_AUTO_1R1W  |        1|  0|   0|    0|    200|   16|     1|         3200|
+    |Matrix_C_BRAM_V_U      |Matrix_C_BRAM_V_RAM_AUTO_1R1W  |       32|  0|   0|    0|  20000|   16|     1|       320000|
+    +-----------------------+-------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |Total                  |                               |      332|  0|   0|    0|  65000| 4816|   301|      1040000|
+    +-----------------------+-------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln48_1_fu_5672_p2             |         +|   0|  0|  20|          15|           1|
+    |add_ln48_fu_5684_p2               |         +|   0|  0|  14|           7|           1|
+    |add_ln50_fu_5716_p2               |         +|   0|  0|  15|           8|           1|
+    |icmp_ln48_fu_5666_p2              |      icmp|   0|  0|  12|          15|          15|
+    |icmp_ln50_fu_5690_p2              |      icmp|   0|  0|  11|           8|           7|
+    |ap_block_state10_on_subcall_done  |        or|   0|  0|   2|           1|           1|
+    |select_ln48_1_fu_5704_p3          |    select|   0|  0|   7|           1|           7|
+    |select_ln48_fu_5696_p3            |    select|   0|  0|   8|           1|           1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  89|          56|          34|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+-----+-----------+-----+-----------+
+    |             Name             | LUT | Input Size| Bits| Total Bits|
+    +------------------------------+-----+-----------+-----+-----------+
+    |Matrix_A_BRAM_V_100_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_100_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_100_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_101_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_101_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_101_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_102_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_102_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_102_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_103_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_103_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_103_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_104_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_104_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_104_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_105_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_105_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_105_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_106_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_106_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_106_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_107_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_107_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_107_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_108_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_108_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_108_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_109_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_109_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_109_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_10_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_10_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_10_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_110_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_110_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_110_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_111_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_111_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_111_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_112_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_112_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_112_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_113_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_113_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_113_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_114_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_114_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_114_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_115_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_115_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_115_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_116_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_116_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_116_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_117_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_117_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_117_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_118_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_118_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_118_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_119_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_119_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_119_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_11_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_11_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_11_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_120_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_120_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_120_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_121_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_121_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_121_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_122_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_122_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_122_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_123_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_123_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_123_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_124_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_124_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_124_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_125_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_125_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_125_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_126_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_126_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_126_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_127_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_127_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_127_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_128_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_128_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_128_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_129_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_129_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_129_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_12_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_12_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_12_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_130_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_130_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_130_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_131_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_131_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_131_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_132_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_132_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_132_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_133_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_133_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_133_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_134_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_134_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_134_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_135_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_135_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_135_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_136_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_136_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_136_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_137_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_137_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_137_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_138_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_138_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_138_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_139_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_139_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_139_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_13_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_13_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_13_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_140_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_140_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_140_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_141_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_141_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_141_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_142_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_142_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_142_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_143_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_143_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_143_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_144_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_144_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_144_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_145_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_145_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_145_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_146_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_146_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_146_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_147_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_147_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_147_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_148_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_148_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_148_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_149_address0  |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_149_ce0       |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_149_we0       |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_14_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_14_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_14_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_15_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_15_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_15_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_16_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_16_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_16_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_17_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_17_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_17_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_18_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_18_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_18_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_19_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_19_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_19_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_1_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_1_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_1_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_20_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_20_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_20_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_21_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_21_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_21_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_22_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_22_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_22_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_23_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_23_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_23_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_24_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_24_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_24_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_25_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_25_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_25_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_26_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_26_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_26_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_27_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_27_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_27_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_28_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_28_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_28_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_29_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_29_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_29_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_2_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_2_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_2_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_30_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_30_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_30_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_31_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_31_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_31_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_32_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_32_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_32_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_33_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_33_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_33_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_34_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_34_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_34_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_35_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_35_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_35_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_36_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_36_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_36_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_37_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_37_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_37_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_38_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_38_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_38_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_39_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_39_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_39_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_3_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_3_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_3_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_40_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_40_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_40_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_41_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_41_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_41_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_42_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_42_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_42_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_43_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_43_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_43_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_44_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_44_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_44_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_45_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_45_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_45_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_46_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_46_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_46_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_47_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_47_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_47_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_48_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_48_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_48_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_49_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_49_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_49_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_4_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_4_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_4_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_50_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_50_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_50_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_51_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_51_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_51_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_52_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_52_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_52_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_53_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_53_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_53_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_54_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_54_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_54_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_55_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_55_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_55_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_56_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_56_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_56_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_57_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_57_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_57_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_58_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_58_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_58_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_59_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_59_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_59_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_5_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_5_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_5_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_60_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_60_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_60_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_61_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_61_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_61_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_62_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_62_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_62_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_63_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_63_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_63_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_64_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_64_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_64_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_65_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_65_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_65_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_66_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_66_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_66_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_67_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_67_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_67_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_68_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_68_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_68_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_69_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_69_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_69_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_6_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_6_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_6_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_70_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_70_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_70_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_71_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_71_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_71_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_72_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_72_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_72_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_73_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_73_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_73_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_74_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_74_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_74_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_75_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_75_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_75_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_76_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_76_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_76_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_77_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_77_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_77_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_78_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_78_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_78_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_79_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_79_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_79_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_7_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_7_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_7_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_80_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_80_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_80_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_81_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_81_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_81_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_82_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_82_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_82_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_83_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_83_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_83_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_84_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_84_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_84_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_85_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_85_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_85_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_86_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_86_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_86_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_87_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_87_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_87_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_88_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_88_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_88_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_89_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_89_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_89_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_8_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_8_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_8_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_90_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_90_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_90_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_91_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_91_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_91_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_92_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_92_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_92_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_93_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_93_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_93_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_94_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_94_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_94_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_95_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_95_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_95_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_96_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_96_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_96_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_97_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_97_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_97_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_98_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_98_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_98_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_99_address0   |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_99_ce0        |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_99_we0        |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_9_address0    |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_9_ce0         |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_9_we0         |    9|          2|    1|          2|
+    |Matrix_A_BRAM_V_address0      |   14|          3|    7|         21|
+    |Matrix_A_BRAM_V_ce0           |   14|          3|    1|          3|
+    |Matrix_A_BRAM_V_we0           |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_100_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_100_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_100_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_101_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_101_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_101_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_102_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_102_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_102_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_103_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_103_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_103_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_104_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_104_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_104_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_105_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_105_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_105_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_106_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_106_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_106_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_107_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_107_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_107_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_108_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_108_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_108_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_109_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_109_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_109_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_10_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_10_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_10_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_110_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_110_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_110_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_111_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_111_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_111_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_112_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_112_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_112_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_113_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_113_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_113_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_114_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_114_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_114_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_115_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_115_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_115_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_116_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_116_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_116_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_117_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_117_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_117_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_118_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_118_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_118_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_119_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_119_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_119_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_11_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_11_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_11_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_120_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_120_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_120_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_121_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_121_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_121_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_122_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_122_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_122_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_123_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_123_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_123_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_124_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_124_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_124_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_125_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_125_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_125_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_126_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_126_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_126_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_127_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_127_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_127_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_128_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_128_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_128_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_129_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_129_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_129_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_12_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_12_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_12_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_130_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_130_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_130_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_131_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_131_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_131_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_132_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_132_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_132_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_133_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_133_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_133_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_134_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_134_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_134_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_135_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_135_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_135_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_136_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_136_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_136_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_137_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_137_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_137_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_138_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_138_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_138_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_139_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_139_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_139_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_13_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_13_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_13_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_140_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_140_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_140_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_141_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_141_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_141_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_142_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_142_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_142_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_143_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_143_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_143_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_144_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_144_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_144_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_145_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_145_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_145_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_146_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_146_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_146_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_147_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_147_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_147_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_148_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_148_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_148_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_149_address0  |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_149_ce0       |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_149_we0       |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_14_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_14_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_14_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_15_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_15_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_15_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_16_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_16_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_16_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_17_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_17_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_17_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_18_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_18_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_18_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_19_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_19_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_19_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_1_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_1_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_1_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_20_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_20_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_20_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_21_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_21_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_21_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_22_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_22_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_22_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_23_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_23_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_23_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_24_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_24_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_24_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_25_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_25_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_25_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_26_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_26_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_26_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_27_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_27_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_27_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_28_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_28_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_28_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_29_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_29_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_29_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_2_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_2_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_2_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_30_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_30_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_30_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_31_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_31_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_31_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_32_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_32_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_32_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_33_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_33_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_33_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_34_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_34_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_34_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_35_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_35_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_35_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_36_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_36_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_36_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_37_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_37_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_37_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_38_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_38_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_38_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_39_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_39_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_39_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_3_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_3_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_3_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_40_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_40_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_40_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_41_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_41_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_41_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_42_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_42_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_42_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_43_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_43_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_43_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_44_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_44_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_44_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_45_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_45_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_45_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_46_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_46_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_46_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_47_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_47_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_47_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_48_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_48_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_48_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_49_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_49_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_49_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_4_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_4_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_4_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_50_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_50_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_50_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_51_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_51_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_51_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_52_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_52_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_52_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_53_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_53_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_53_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_54_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_54_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_54_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_55_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_55_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_55_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_56_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_56_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_56_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_57_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_57_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_57_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_58_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_58_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_58_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_59_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_59_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_59_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_5_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_5_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_5_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_60_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_60_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_60_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_61_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_61_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_61_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_62_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_62_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_62_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_63_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_63_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_63_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_64_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_64_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_64_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_65_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_65_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_65_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_66_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_66_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_66_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_67_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_67_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_67_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_68_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_68_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_68_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_69_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_69_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_69_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_6_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_6_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_6_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_70_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_70_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_70_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_71_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_71_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_71_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_72_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_72_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_72_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_73_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_73_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_73_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_74_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_74_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_74_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_75_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_75_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_75_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_76_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_76_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_76_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_77_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_77_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_77_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_78_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_78_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_78_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_79_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_79_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_79_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_7_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_7_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_7_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_80_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_80_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_80_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_81_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_81_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_81_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_82_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_82_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_82_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_83_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_83_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_83_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_84_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_84_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_84_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_85_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_85_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_85_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_86_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_86_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_86_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_87_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_87_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_87_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_88_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_88_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_88_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_89_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_89_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_89_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_8_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_8_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_8_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_90_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_90_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_90_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_91_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_91_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_91_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_92_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_92_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_92_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_93_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_93_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_93_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_94_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_94_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_94_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_95_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_95_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_95_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_96_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_96_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_96_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_97_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_97_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_97_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_98_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_98_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_98_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_99_address0   |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_99_ce0        |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_99_we0        |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_9_address0    |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_9_ce0         |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_9_we0         |    9|          2|    1|          2|
+    |Matrix_B_BRAM_V_address0      |   14|          3|    8|         24|
+    |Matrix_B_BRAM_V_ce0           |   14|          3|    1|          3|
+    |Matrix_B_BRAM_V_we0           |    9|          2|    1|          2|
+    |Matrix_C_BRAM_V_address0      |   25|          5|   15|         75|
+    |Matrix_C_BRAM_V_ce0           |   25|          5|    1|          5|
+    |Matrix_C_BRAM_V_d0            |   14|          3|   16|         48|
+    |Matrix_C_BRAM_V_we0           |   14|          3|    1|          3|
+    |ap_NS_fsm                     |  155|         35|    1|         35|
+    |c_fu_106                      |    9|          2|    8|         16|
+    |indvar_flatten320_fu_114      |    9|          2|   15|         30|
+    |mem_ARADDR                    |   25|          5|   64|        320|
+    |mem_ARLEN                     |   25|          5|   32|        160|
+    |mem_ARVALID                   |   20|          4|    1|          4|
+    |mem_AWADDR                    |   14|          3|   64|        192|
+    |mem_AWLEN                     |   14|          3|   32|         96|
+    |mem_AWVALID                   |   14|          3|    1|          3|
+    |mem_BREADY                    |   14|          3|    1|          3|
+    |mem_RREADY                    |   14|          3|    1|          3|
+    |mem_WVALID                    |    9|          2|    1|          2|
+    |mem_blk_n_AR                  |    9|          2|    1|          2|
+    |mem_blk_n_AW                  |    9|          2|    1|          2|
+    |mem_blk_n_B                   |    9|          2|    1|          2|
+    |r_fu_110                      |    9|          2|    7|         14|
+    +------------------------------+-----+-----------+-----+-----------+
+    |Total                         |11536|       2494| 3114|       9265|
+    +------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                    Name                                    | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------------------------------+----+----+-----+-----------+
+    |Matrix_A_BRAM_V_100_load_reg_8166                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_101_load_reg_8171                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_102_load_reg_8176                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_103_load_reg_8181                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_104_load_reg_8186                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_105_load_reg_8191                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_106_load_reg_8196                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_107_load_reg_8201                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_108_load_reg_8206                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_109_load_reg_8211                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_10_load_reg_7716                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_110_load_reg_8216                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_111_load_reg_8221                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_112_load_reg_8226                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_113_load_reg_8231                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_114_load_reg_8236                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_115_load_reg_8241                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_116_load_reg_8246                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_117_load_reg_8251                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_118_load_reg_8256                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_119_load_reg_8261                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_11_load_reg_7721                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_120_load_reg_8266                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_121_load_reg_8271                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_122_load_reg_8276                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_123_load_reg_8281                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_124_load_reg_8286                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_125_load_reg_8291                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_126_load_reg_8296                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_127_load_reg_8301                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_128_load_reg_8306                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_129_load_reg_8311                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_12_load_reg_7726                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_130_load_reg_8316                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_131_load_reg_8321                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_132_load_reg_8326                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_133_load_reg_8331                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_134_load_reg_8336                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_135_load_reg_8341                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_136_load_reg_8346                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_137_load_reg_8351                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_138_load_reg_8356                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_139_load_reg_8361                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_13_load_reg_7731                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_140_load_reg_8366                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_141_load_reg_8371                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_142_load_reg_8376                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_143_load_reg_8381                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_144_load_reg_8386                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_145_load_reg_8391                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_146_load_reg_8396                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_147_load_reg_8401                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_148_load_reg_8406                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_149_load_reg_8411                                           |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_14_load_reg_7736                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_15_load_reg_7741                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_16_load_reg_7746                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_17_load_reg_7751                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_18_load_reg_7756                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_19_load_reg_7761                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_1_load_reg_7671                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_20_load_reg_7766                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_21_load_reg_7771                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_22_load_reg_7776                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_23_load_reg_7781                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_24_load_reg_7786                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_25_load_reg_7791                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_26_load_reg_7796                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_27_load_reg_7801                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_28_load_reg_7806                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_29_load_reg_7811                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_2_load_reg_7676                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_30_load_reg_7816                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_31_load_reg_7821                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_32_load_reg_7826                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_33_load_reg_7831                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_34_load_reg_7836                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_35_load_reg_7841                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_36_load_reg_7846                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_37_load_reg_7851                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_38_load_reg_7856                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_39_load_reg_7861                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_3_load_reg_7681                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_40_load_reg_7866                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_41_load_reg_7871                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_42_load_reg_7876                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_43_load_reg_7881                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_44_load_reg_7886                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_45_load_reg_7891                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_46_load_reg_7896                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_47_load_reg_7901                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_48_load_reg_7906                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_49_load_reg_7911                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_4_load_reg_7686                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_50_load_reg_7916                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_51_load_reg_7921                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_52_load_reg_7926                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_53_load_reg_7931                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_54_load_reg_7936                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_55_load_reg_7941                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_56_load_reg_7946                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_57_load_reg_7951                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_58_load_reg_7956                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_59_load_reg_7961                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_5_load_reg_7691                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_60_load_reg_7966                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_61_load_reg_7971                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_62_load_reg_7976                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_63_load_reg_7981                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_64_load_reg_7986                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_65_load_reg_7991                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_66_load_reg_7996                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_67_load_reg_8001                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_68_load_reg_8006                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_69_load_reg_8011                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_6_load_reg_7696                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_70_load_reg_8016                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_71_load_reg_8021                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_72_load_reg_8026                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_73_load_reg_8031                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_74_load_reg_8036                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_75_load_reg_8041                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_76_load_reg_8046                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_77_load_reg_8051                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_78_load_reg_8056                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_79_load_reg_8061                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_7_load_reg_7701                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_80_load_reg_8066                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_81_load_reg_8071                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_82_load_reg_8076                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_83_load_reg_8081                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_84_load_reg_8086                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_85_load_reg_8091                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_86_load_reg_8096                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_87_load_reg_8101                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_88_load_reg_8106                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_89_load_reg_8111                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_8_load_reg_7706                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_90_load_reg_8116                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_91_load_reg_8121                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_92_load_reg_8126                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_93_load_reg_8131                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_94_load_reg_8136                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_95_load_reg_8141                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_96_load_reg_8146                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_97_load_reg_8151                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_98_load_reg_8156                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_99_load_reg_8161                                            |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_9_load_reg_7711                                             |  16|   0|   16|          0|
+    |Matrix_A_BRAM_V_load_reg_7666                                               |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_100_load_reg_8921                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_101_load_reg_8926                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_102_load_reg_8931                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_103_load_reg_8936                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_104_load_reg_8941                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_105_load_reg_8946                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_106_load_reg_8951                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_107_load_reg_8956                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_108_load_reg_8961                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_109_load_reg_8966                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_10_load_reg_8471                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_110_load_reg_8971                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_111_load_reg_8976                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_112_load_reg_8981                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_113_load_reg_8986                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_114_load_reg_8991                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_115_load_reg_8996                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_116_load_reg_9001                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_117_load_reg_9006                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_118_load_reg_9011                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_119_load_reg_9016                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_11_load_reg_8476                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_120_load_reg_9021                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_121_load_reg_9026                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_122_load_reg_9031                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_123_load_reg_9036                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_124_load_reg_9041                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_125_load_reg_9046                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_126_load_reg_9051                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_127_load_reg_9056                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_128_load_reg_9061                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_129_load_reg_9066                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_12_load_reg_8481                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_130_load_reg_9071                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_131_load_reg_9076                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_132_load_reg_9081                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_133_load_reg_9086                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_134_load_reg_9091                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_135_load_reg_9096                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_136_load_reg_9101                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_137_load_reg_9106                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_138_load_reg_9111                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_139_load_reg_9116                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_13_load_reg_8486                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_140_load_reg_9121                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_141_load_reg_9126                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_142_load_reg_9131                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_143_load_reg_9136                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_144_load_reg_9141                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_145_load_reg_9146                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_146_load_reg_9151                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_147_load_reg_9156                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_148_load_reg_9161                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_149_load_reg_9166                                           |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_14_load_reg_8491                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_15_load_reg_8496                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_16_load_reg_8501                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_17_load_reg_8506                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_18_load_reg_8511                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_19_load_reg_8516                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_1_load_reg_8426                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_20_load_reg_8521                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_21_load_reg_8526                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_22_load_reg_8531                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_23_load_reg_8536                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_24_load_reg_8541                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_25_load_reg_8546                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_26_load_reg_8551                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_27_load_reg_8556                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_28_load_reg_8561                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_29_load_reg_8566                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_2_load_reg_8431                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_30_load_reg_8571                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_31_load_reg_8576                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_32_load_reg_8581                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_33_load_reg_8586                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_34_load_reg_8591                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_35_load_reg_8596                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_36_load_reg_8601                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_37_load_reg_8606                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_38_load_reg_8611                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_39_load_reg_8616                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_3_load_reg_8436                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_40_load_reg_8621                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_41_load_reg_8626                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_42_load_reg_8631                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_43_load_reg_8636                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_44_load_reg_8641                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_45_load_reg_8646                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_46_load_reg_8651                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_47_load_reg_8656                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_48_load_reg_8661                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_49_load_reg_8666                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_4_load_reg_8441                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_50_load_reg_8671                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_51_load_reg_8676                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_52_load_reg_8681                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_53_load_reg_8686                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_54_load_reg_8691                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_55_load_reg_8696                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_56_load_reg_8701                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_57_load_reg_8706                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_58_load_reg_8711                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_59_load_reg_8716                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_5_load_reg_8446                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_60_load_reg_8721                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_61_load_reg_8726                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_62_load_reg_8731                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_63_load_reg_8736                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_64_load_reg_8741                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_65_load_reg_8746                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_66_load_reg_8751                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_67_load_reg_8756                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_68_load_reg_8761                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_69_load_reg_8766                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_6_load_reg_8451                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_70_load_reg_8771                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_71_load_reg_8776                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_72_load_reg_8781                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_73_load_reg_8786                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_74_load_reg_8791                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_75_load_reg_8796                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_76_load_reg_8801                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_77_load_reg_8806                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_78_load_reg_8811                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_79_load_reg_8816                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_7_load_reg_8456                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_80_load_reg_8821                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_81_load_reg_8826                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_82_load_reg_8831                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_83_load_reg_8836                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_84_load_reg_8841                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_85_load_reg_8846                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_86_load_reg_8851                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_87_load_reg_8856                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_88_load_reg_8861                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_89_load_reg_8866                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_8_load_reg_8461                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_90_load_reg_8871                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_91_load_reg_8876                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_92_load_reg_8881                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_93_load_reg_8886                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_94_load_reg_8891                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_95_load_reg_8896                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_96_load_reg_8901                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_97_load_reg_8906                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_98_load_reg_8911                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_99_load_reg_8916                                            |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_9_load_reg_8466                                             |  16|   0|   16|          0|
+    |Matrix_B_BRAM_V_load_reg_8421                                               |  16|   0|   16|          0|
+    |Matrix_C_BRAM_V_load_reg_8416                                               |  16|   0|   16|          0|
+    |Matrix_C_DRAM_read_reg_6099                                                 |  64|   0|   64|          0|
+    |ap_CS_fsm                                                                   |  34|   0|   34|          0|
+    |c_fu_106                                                                    |   8|   0|    8|          0|
+    |empty_26_reg_6906                                                           |  15|   0|   15|          0|
+    |grp_matmul_Pipeline_VITIS_LOOP_22_1_VITIS_LOOP_24_2_fu_4974_ap_start_reg    |   1|   0|    1|          0|
+    |grp_matmul_Pipeline_VITIS_LOOP_31_3_VITIS_LOOP_33_4_fu_5136_ap_start_reg    |   1|   0|    1|          0|
+    |grp_matmul_Pipeline_VITIS_LOOP_40_5_VITIS_LOOP_42_6_fu_5131_ap_start_reg    |   1|   0|    1|          0|
+    |grp_matmul_Pipeline_VITIS_LOOP_52_9_fu_5293_ap_start_reg                    |   1|   0|    1|          0|
+    |grp_matmul_Pipeline_VITIS_LOOP_60_10_VITIS_LOOP_62_11_fu_5600_ap_start_reg  |   1|   0|    1|          0|
+    |indvar_flatten320_fu_114                                                    |  15|   0|   15|          0|
+    |r_fu_110                                                                    |   7|   0|    7|          0|
+    |select_ln48_1_reg_6135                                                      |   7|   0|    7|          0|
+    |select_ln48_reg_6129                                                        |   8|   0|    8|          0|
+    |trunc_ln1_reg_6110                                                          |  63|   0|   63|          0|
+    |trunc_ln2_reg_6145                                                          |  63|   0|   63|          0|
+    |trunc_ln_reg_6104                                                           |  63|   0|   63|          0|
+    +----------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                       |5168|   0| 5168|          0|
+    +----------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWADDR   |   in|    6|       s_axi|       control|        scalar|
+|s_axi_control_WVALID   |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_WREADY   |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_WDATA    |   in|   32|       s_axi|       control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|       control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARADDR   |   in|    6|       s_axi|       control|        scalar|
+|s_axi_control_RVALID   |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_RREADY   |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_RDATA    |  out|   32|       s_axi|       control|        scalar|
+|s_axi_control_RRESP    |  out|    2|       s_axi|       control|        scalar|
+|s_axi_control_BVALID   |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_BREADY   |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_BRESP    |  out|    2|       s_axi|       control|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|        matmul|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|        matmul|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|        matmul|  return value|
+|m_axi_mem_AWVALID      |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_AWREADY      |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_AWADDR       |  out|   64|       m_axi|           mem|       pointer|
+|m_axi_mem_AWID         |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_AWLEN        |  out|    8|       m_axi|           mem|       pointer|
+|m_axi_mem_AWSIZE       |  out|    3|       m_axi|           mem|       pointer|
+|m_axi_mem_AWBURST      |  out|    2|       m_axi|           mem|       pointer|
+|m_axi_mem_AWLOCK       |  out|    2|       m_axi|           mem|       pointer|
+|m_axi_mem_AWCACHE      |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_AWPROT       |  out|    3|       m_axi|           mem|       pointer|
+|m_axi_mem_AWQOS        |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_AWREGION     |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_AWUSER       |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_WVALID       |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_WREADY       |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_WDATA        |  out|   32|       m_axi|           mem|       pointer|
+|m_axi_mem_WSTRB        |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_WLAST        |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_WID          |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_WUSER        |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_ARVALID      |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_ARREADY      |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_ARADDR       |  out|   64|       m_axi|           mem|       pointer|
+|m_axi_mem_ARID         |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_ARLEN        |  out|    8|       m_axi|           mem|       pointer|
+|m_axi_mem_ARSIZE       |  out|    3|       m_axi|           mem|       pointer|
+|m_axi_mem_ARBURST      |  out|    2|       m_axi|           mem|       pointer|
+|m_axi_mem_ARLOCK       |  out|    2|       m_axi|           mem|       pointer|
+|m_axi_mem_ARCACHE      |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_ARPROT       |  out|    3|       m_axi|           mem|       pointer|
+|m_axi_mem_ARQOS        |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_ARREGION     |  out|    4|       m_axi|           mem|       pointer|
+|m_axi_mem_ARUSER       |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_RVALID       |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_RREADY       |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_RDATA        |   in|   32|       m_axi|           mem|       pointer|
+|m_axi_mem_RLAST        |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_RID          |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_RUSER        |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_RRESP        |   in|    2|       m_axi|           mem|       pointer|
+|m_axi_mem_BVALID       |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_BREADY       |  out|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_BRESP        |   in|    2|       m_axi|           mem|       pointer|
+|m_axi_mem_BID          |   in|    1|       m_axi|           mem|       pointer|
+|m_axi_mem_BUSER        |   in|    1|       m_axi|           mem|       pointer|
++-----------------------+-----+-----+------------+--------------+--------------+
